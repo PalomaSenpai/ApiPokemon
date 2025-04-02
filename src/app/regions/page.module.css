@@ -1,0 +1,158 @@
+/* app/regions/page.module.css */
+.container {
+    padding: 3rem;
+    padding-left: calc(var(--sb-width) + 3rem); /* Ajusta el padding según el ancho del sidebar */
+    padding-right: 3rem; /* Padding derecho para simetría */
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .regionList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%; /* Asegura que la lista ocupe todo el ancho */
+  }
+  
+  .region {
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #ffffff 0%, #e6e6e6 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Cada tarjeta ocupa todo el ancho disponible */
+    box-sizing: border-box;
+  }
+  
+  .region:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .regionName {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #34495e;
+    text-transform: capitalize;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+  }
+  
+  .locations {
+    margin-top: 1rem;
+  }
+  
+  .locationsTitle {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .locationList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribución en columnas */
+    gap: 0.5rem;
+  }
+  
+  .locationItem {
+    font-size: 1rem;
+    color: #555;
+    text-transform: capitalize;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .locationItem::before {
+    content: '📍';
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+  }
+  
+  .noLocations {
+    font-size: 1rem;
+    color: #999;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .backLink {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .backLink:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .container {
+      padding: 2rem;
+      padding-left: calc(var(--sb-width) + 2rem);
+      padding-right: 2rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .region {
+      padding: 1rem;
+    }
+  
+    .regionName {
+      font-size: 1.5rem;
+    }
+  
+    .locationsTitle {
+      font-size: 1.1rem;
+    }
+  
+    .locationList {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  
+    .locationItem {
+      font-size: 0.9rem;
+    }
+  }

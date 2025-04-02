@@ -1,0 +1,273 @@
+/* app/page.module.css */
+.container {
+  padding: 3rem;
+  padding-left: calc(var(--sb-width) + 3rem); /* Ajusta el padding según el ancho del sidebar */
+  padding-right: 3rem; /* Padding derecho para simetría */
+  box-sizing: border-box;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura */
+  background: linear-gradient(135deg, #ff6b6b 0%, #3498db 100%); /* Gradiente inspirado en Poké Balls */
+  position: relative;
+  z-index: 0; /* Aseguramos que el contenedor esté detrás del sidebar */
+}
+
+/* Patrón de fondo con Poké Balls (opcional) */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(var(--sb-width)); /* Ajustamos el inicio del fondo para que respete el sidebar */
+  width: calc(100% - var(--sb-width)); /* Ajustamos el ancho del fondo */
+  height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="20" fill="rgba(255, 255, 255, 0.1)" /%3E%3Cpath d="M50 30a20 20 0 0 0 0 40h20a20 20 0 0 0 0-40H50z" fill="rgba(255, 255, 255, 0.2)" /%3E%3C/svg%3E');
+  background-repeat: repeat;
+  opacity: 0.1; /* Reducimos la opacidad para que no distraiga */
+  z-index: -1; /* Aseguramos que el fondo esté detrás del contenido y del sidebar */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.pokemonDetails {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.imageContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pokemonImage {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.noImage {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 auto;
+}
+
+.infoSection,
+.statsSection,
+.movesSection {
+  margin-bottom: 2rem;
+}
+
+.infoSection h2,
+.statsSection h2,
+.movesSection h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ff6b6b; /* Línea roja inspirada en Poké Balls */
+  padding-bottom: 0.5rem;
+}
+
+.infoSection p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.statsTable th,
+.statsTable td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.statsTable th {
+  background-color: #333;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.statsTable td {
+  color: #555;
+  text-align: center;
+}
+
+.statsTable td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.statName {
+  font-weight: 600;
+  color: #333;
+  width: 80px;
+}
+
+.statValue {
+  width: 40px;
+  text-align: right;
+}
+
+.statBarContainer {
+  flex: 1;
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.statBar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.totalRow td {
+  font-weight: 600;
+  color: #333;
+}
+
+.statsNote {
+  font-size: 0.85rem;
+  color: #777;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.movesList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.movesList li {
+  background: #f9f9f9;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #555;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.backLink {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #e74c3c; /* Color rojo inspirado en Poké Balls */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.backLink:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    padding-left: calc(var(--sb-width) + 1rem);
+    padding-right: 1rem;
+  }
+
+  .container::before {
+    left: calc(var(--sb-width)); /* Ajustamos el fondo para pantallas pequeñas */
+    width: calc(100% - var(--sb-width));
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .pokemonDetails {
+    padding: 1.5rem;
+  }
+
+  .pokemonImage,
+  .noImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .infoSection h2,
+  .statsSection h2,
+  .movesSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .infoSection p {
+    font-size: 0.9rem;
+  }
+
+  .statsTable th,
+  .statsTable td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .statName {
+    width: 60px;
+  }
+
+  .statValue {
+    width: 30px;
+  }
+
+  .statBarContainer {
+    height: 8px;
+  }
+
+  .statsNote {
+    font-size: 0.75rem;
+  }
+
+  .movesList {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .movesList li {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .backLink {
+    padding: 0.5rem 1rem;
+  }
+}
