@@ -1,3 +1,4 @@
+'use client'
 // app/about/page.jsx
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,7 +8,7 @@ import styles from './page.module.css';
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function fetchPokemonList() {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500', {
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1025', {
     cache: 'force-cache',
   });
   if (!response.ok) {

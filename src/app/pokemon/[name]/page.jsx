@@ -163,9 +163,9 @@ export default async function PokemonDetailsPage({ params }) {
           </ul>
         </div>
       </div>
-      <Link href="/about" className={styles.backLink}>
+      <Link href="/pokemon" className={styles.backLink}>
         Volver a la lista de Pokémon
       </Link>
     </div>
-  );
+  );z
 }

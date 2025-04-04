@@ -19,7 +19,7 @@
     width: var(--sb-width);
     background-image: linear-gradient(#90c3fd, #ba71ff, #ff71b8);
     transition: width 0.5s ease-in-out;
-    z-index: 1000;
+    
 }
 
 .nav{

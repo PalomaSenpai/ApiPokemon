@@ -7,14 +7,14 @@
   width: 100%; /* Ocupa todo el ancho disponible */
   min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura */
   background: linear-gradient(135deg, #2ecc71 0%, #f1c40f 100%); /* Gradiente verde y dorado inspirado en items */
-  position: relative;
-  z-index: 0; /* Aseguramos que el contenedor esté detrás del sidebar */
+  
+   /* Aseguramos que el contenedor esté detrás del sidebar */
 }
 
 /* Patrón de fondo con iconos de items (opcional) */
 .container::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: calc(var(--sb-width)); /* Ajustamos el inicio del fondo para que respete el sidebar */
   width: calc(100% - var(--sb-width)); /* Ajustamos el ancho del fondo */

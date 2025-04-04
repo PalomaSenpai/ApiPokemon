@@ -43,21 +43,15 @@ export default function RootLayout({ children }) {
                 </a>
               </li>
               <li className={styles.navLi}>
-                <a className={styles.navA}>
+                <a className={styles.navA} href='/moves'>
                   <i className="bx bx-cloud-download"></i>
                   <span className={styles.navSpan}>Downloads</span>
                 </a>
               </li>
               <li className={styles.navLi}>
-                <a className={styles.navA}>
+                <a className={styles.navA} href='/berries'>
                   <i className="bx bx-chat"></i>
                   <span className={styles.navSpan}>Messages</span>
-                </a>
-              </li>
-              <li className={styles.navLi}>
-                <a className={styles.navA}>
-                  <i className="bx bx-cog"></i>
-                  <span className={styles.navSpan}>Settings</span>
                 </a>
               </li>
               <li className={styles.navLi}>
